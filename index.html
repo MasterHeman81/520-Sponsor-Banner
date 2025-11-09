@@ -6,31 +6,29 @@
 <title>Sponsor Banner</title>
 
 <style>
-    body {
-        margin: 0;
-        background: transparent;
-        overflow: hidden;
-    }
+.banner-container {
+    width: 350px;       /* adjust width for your banner */
+    height: 150px;      /* adjust height for your banner */
+    display: flex;
+    justify-content: center;   /* centers images horizontally */
+    align-items: center;       /* centers images vertically */
+    position: relative;
+    overflow: hidden;          /* prevents overflow outside container */
+    background: transparent;   /* optional, keeps overlay transparent */
+}
 
-    .banner-container {
-        width: 350px; /* You can change this size later */
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.banner-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;   /* keeps image aspect ratio, no cropping */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-    .banner-img {
-        position: absolute;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .banner-img.active {
-        opacity: 1;
-    }
+.banner-img.active {
+    opacity: 1;
+}
 </style>
 </head>
 <body>
